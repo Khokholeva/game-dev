@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,11 @@ public class PlayerController : MonoBehaviour
     public float speed = 1.0f;
     public float jumpForce = 5.0f;
     private Rigidbody2D rb;
+    public GameObject[] shapePreviews;
+    public int index = 0;
+    public Vector3 mousePosition;
+    public bool spawnState = false;
+    public GameObject currentPreview;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +26,25 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
         }
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            if (!spawnState)
+            {
+                mousePosition = Mouse.current.position.ReadValue();
+                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                currentPreview = Instantiate(shapePreviews[index], mousePosition, new Quaternion());
+                spawnState = true;
+            }
+            else
+            {
+                spawnState = false;
+            }
+        }
+        if (Mouse.current.rightButton.wasPressedThisFrame && spawnState)
+        {
+            spawnState = false;
+        }
     }
 
     private void FixedUpdate()
@@ -31,5 +56,10 @@ public class PlayerController : MonoBehaviour
             dir = 1;
 
         rb.linearVelocityX = speed * dir;
+
+        if (Keyboard.current.eKey.isPressed)
+        {
+            index = (index + 1) % shapePreviews.Length;
+        } 
     }
 }
