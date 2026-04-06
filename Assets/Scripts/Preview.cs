@@ -12,20 +12,11 @@ public class Preview : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
     }
 
     private void FixedUpdate()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Instantiate(objectToSpawn, transform.position, new Quaternion());
-            Destroy(gameObject);
-        }
-        if (Mouse.current.rightButton.wasPressedThisFrame)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
     // Update is called once per frame
