@@ -105,8 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e276431b19962a04fa8fd293e7f60322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Preview
-  moveSpeed: 0.1
-  objectToSpawn: {fileID: 1785769470673810989, guid: 1b09d1c1a001d4c4eb35fddc9507e898, type: 3}
+  moveSpeed: 0.2
 --- !u!61 &2399616674888560612
 BoxCollider2D:
   m_ObjectHideFlags: 0

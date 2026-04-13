@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,15 +8,23 @@ public class PlayerController : MonoBehaviour
     public float speed = 1.0f;
     public float jumpForce = 5.0f;
     private Rigidbody2D rb;
+
     public GameObject[] shapePreviews;
     public GameObject[] shapes;
-    public int index = 0;
+    public Color[] colors;
+    public int shapeIndex = 0;
+    public int colorIndex = 0;
+
     public Vector3 mousePosition;
     public bool spawnState = false;
     public GameObject currentPreview;
+    public GameObject lastShape;
+
     public GameObject spawnZone;
     public float spawnRadius = 15.0f;
     public float dist;
+
+    public float floatingSpeed = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,7 +58,8 @@ public class PlayerController : MonoBehaviour
             {
                 mousePosition = Mouse.current.position.ReadValue();
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-                currentPreview = Instantiate(shapePreviews[index], mousePosition, new Quaternion(), this.transform);
+                currentPreview = Instantiate(shapePreviews[shapeIndex], mousePosition, new Quaternion(), this.transform);
+                currentPreview.GetComponent<Renderer>().material.color = colors[colorIndex];
                 spawnState = true;
                 spawnZone.SetActive(true);
             }
@@ -58,8 +68,20 @@ public class PlayerController : MonoBehaviour
                 var dist = (currentPreview.transform.position - transform.position).magnitude;
                 if (dist <= spawnRadius)
                 {
-                    Instantiate(shapes[index], currentPreview.transform.position, new Quaternion());
+                    lastShape = Instantiate(shapes[shapeIndex], currentPreview.transform.position, new Quaternion());
+                    lastShape.GetComponent<Renderer>().material.color = colors[colorIndex];
+                    switch (colorIndex)
+                    {
+                        case 1:
+                            lastShape.AddComponent<BouncyScript>();
+                            break;
+                        case 2:
+                            lastShape.GetComponent<Rigidbody2D>().gravityScale = -0.6f;
+                            break;
+                    }
+                    
                     Destroy(currentPreview);
+                    currentPreview = null;
                     spawnZone.SetActive(false);
                     spawnState = false;
                 }
@@ -68,12 +90,30 @@ public class PlayerController : MonoBehaviour
         if (Mouse.current.rightButton.wasPressedThisFrame && spawnState)
         {
             Destroy(currentPreview);
+            currentPreview = null;
             spawnZone.SetActive(false);
             spawnState = false;
         }
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
-            index = (index + 1) % shapePreviews.Length;
+            shapeIndex = (shapeIndex + 1) % shapePreviews.Length;
+            if (currentPreview != null)
+            {
+                Destroy(currentPreview);
+                mousePosition = Mouse.current.position.ReadValue();
+                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                currentPreview = Instantiate(shapePreviews[shapeIndex], mousePosition, new Quaternion(), this.transform);
+                currentPreview.GetComponent<Renderer>().material.color = colors[colorIndex];
+            }
+        }
+
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            colorIndex = (colorIndex + 1) % colors.Length;
+            if (currentPreview != null)
+            {
+                currentPreview.GetComponent<Renderer>().material.color = colors[colorIndex];
+            }
         }
     }
 
@@ -85,7 +125,6 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
             dir = 1;
 
-        rb.linearVelocityX = speed * dir;
-        
+        rb.linearVelocityX = speed * dir;   
     }
 }
