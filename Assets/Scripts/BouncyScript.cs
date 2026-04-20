@@ -20,6 +20,7 @@ public class BouncyScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         direction = collision.transform.position - transform.position;
-        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * bounceForce, ForceMode2D.Impulse);
+        if (collision.rigidbody != null)
+            collision.rigidbody.AddForce(direction * bounceForce, ForceMode2D.Impulse);
     }
 }

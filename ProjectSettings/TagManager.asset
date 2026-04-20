@@ -7,6 +7,8 @@ TagManager:
   - SpawnedObject
   - ObjectPreview
   - spawnZone
+  - ThinPlatform
+  - ColorUnlock
   layers:
   - Default
   - TransparentFX

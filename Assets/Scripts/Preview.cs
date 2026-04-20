@@ -7,6 +7,7 @@ public class Preview : MonoBehaviour
 
     private Vector3 mousePosition;
     public float moveSpeed = 0.1f;
+    public int collisionCounter = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,5 +20,15 @@ public class Preview : MonoBehaviour
         mousePosition = Mouse.current.position.ReadValue();
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        collisionCounter++;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        collisionCounter--;
     }
 }
