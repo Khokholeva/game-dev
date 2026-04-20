@@ -83,7 +83,8 @@ public class PlayerController : MonoBehaviour
                             lastShape.AddComponent<BouncyScript>();
                             break;
                         case 2:
-                            lastShape.GetComponent<Rigidbody2D>().gravityScale = -0.6f;
+                            lastShape.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                            lastShape.GetComponent<Rigidbody2D>().linearVelocityY = 1;
                             break;
                         case 3:
                             lastShape.GetComponent<Rigidbody2D>().mass = 20f; break;
