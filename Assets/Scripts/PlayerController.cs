@@ -51,11 +51,11 @@ public class PlayerController : MonoBehaviour
             dist = (currentPreview.transform.position - transform.position).magnitude;
             if (dist > spawnRadius || previewScript.collisionCounter > 0)
             {
-                spawnZone.GetComponent<Renderer>().material.color = Color.red;
+                spawnZone.GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f, 0.3f);
             }
             else
             {
-                spawnZone.GetComponent<Renderer>().material.color = Color.green;
+                spawnZone.GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0.3f, 0.3f);
             }
         }
         if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -65,7 +65,9 @@ public class PlayerController : MonoBehaviour
                 mousePosition = Mouse.current.position.ReadValue();
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
                 currentPreview = Instantiate(shapePreviews[shapeIndex], mousePosition, new Quaternion(), this.transform);
-                currentPreview.GetComponent<Renderer>().material.color = colors[colorIndex];
+                var color = colors[colorIndex];
+                color.a = 0.4f;
+                currentPreview.GetComponent<SpriteRenderer>().color = color;
                 previewScript = currentPreview.GetComponent<Preview>();
                 spawnState = true;
                 spawnZone.SetActive(true);
@@ -76,7 +78,7 @@ public class PlayerController : MonoBehaviour
                 if (dist <= spawnRadius && previewScript.collisionCounter == 0)
                 {
                     lastShape = Instantiate(shapes[shapeIndex], currentPreview.transform.position, new Quaternion());
-                    lastShape.GetComponent<Renderer>().material.color = colors[colorIndex];
+                    lastShape.GetComponent<SpriteRenderer>().color = colors[colorIndex];
                     switch (colorIndex)
                     {
                         case 1:
@@ -88,6 +90,8 @@ public class PlayerController : MonoBehaviour
                             break;
                         case 3:
                             lastShape.GetComponent<Rigidbody2D>().mass = 20f; break;
+                        case 4:
+                            lastShape.AddComponent<Explosive>(); break;
                     }
                     
                     Destroy(currentPreview);
@@ -113,7 +117,9 @@ public class PlayerController : MonoBehaviour
                 mousePosition = Mouse.current.position.ReadValue();
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
                 currentPreview = Instantiate(shapePreviews[shapeIndex], mousePosition, new Quaternion(), this.transform);
-                currentPreview.GetComponent<Renderer>().material.color = colors[colorIndex];
+                var color = colors[colorIndex];
+                color.a = 0.5f;
+                currentPreview.GetComponent<SpriteRenderer>().color = color;
                 previewScript = currentPreview.GetComponent<Preview>();
             }
         }
@@ -124,7 +130,9 @@ public class PlayerController : MonoBehaviour
             while (!unlockedColors[colorIndex]) colorIndex = (colorIndex + 1) % colors.Length;
             if (currentPreview != null)
             {
-                currentPreview.GetComponent<Renderer>().material.color = colors[colorIndex];
+                var color = colors[colorIndex];
+                color.a = 0.5f;
+                currentPreview.GetComponent<SpriteRenderer>().color = color;
             }
         }
     }

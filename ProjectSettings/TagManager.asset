@@ -9,6 +9,8 @@ TagManager:
   - spawnZone
   - ThinPlatform
   - ColorUnlock
+  - FragilePlatform
+  - Button
   layers:
   - Default
   - TransparentFX
