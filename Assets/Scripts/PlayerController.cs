@@ -1,5 +1,3 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,6 +29,8 @@ public class PlayerController : MonoBehaviour
 
     Preview previewScript;
 
+    public bool freezeControls = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,10 +43,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && grounded)
-        {
-            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        }
+        if (!freezeControls)
+            if (Keyboard.current.spaceKey.wasPressedThisFrame && grounded)
+            {
+                rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            }
         if (spawnState)
         {
             dist = (currentPreview.transform.position - transform.position).magnitude;
@@ -141,13 +142,20 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float dir = 0;
-        if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed)
-            dir = -1;
-        if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
-            dir = 1;
+        if (!freezeControls)
+        {
+            float dir = 0;
+            if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed)
+                dir = -1;
+            if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
+                dir = 1;
 
-        rb.linearVelocityX = speed * dir;
+            rb.linearVelocityX = speed * dir;
+        }
+        else
+        {
+            rb.linearVelocityX = 0;
+        }
         grounded = Physics2D.BoxCast(transform.position, new Vector2(1f, 1f), 0f, Vector2.down, 0.05f);
     }
 

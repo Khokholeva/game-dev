@@ -637,8 +637,8 @@ GameObject:
   m_Component:
   - component: {fileID: 172404299}
   - component: {fileID: 172404302}
-  - component: {fileID: 172404301}
   - component: {fileID: 172404300}
+  - component: {fileID: 172404303}
   m_Layer: 0
   m_Name: Cage Floor
   m_TagString: ThinPlatform
@@ -654,12 +654,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172404298}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.25, y: 0.75, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.5, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1778262779}
+  m_Children:
+  - {fileID: 1116868450}
+  - {fileID: 1516445478}
+  - {fileID: 1244378330}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &172404300
 SpriteRenderer:
@@ -720,18 +723,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &172404301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172404298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3b513e00bad42f42a3269751fa71c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThinPlatform
 --- !u!61 &172404302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -739,7 +730,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172404298}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -778,6 +769,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &172404303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172404298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b513e00bad42f42a3269751fa71c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThinPlatform
+  brokenSprite: {fileID: -7960385647597438538, guid: dab269f67d99a894aa475deb1bcbc780, type: 3}
 --- !u!1 &242625013
 GameObject:
   m_ObjectHideFlags: 0
@@ -16676,6 +16680,94 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &927168503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927168505}
+  - component: {fileID: 927168504}
+  - component: {fileID: 927168506}
+  m_Layer: 0
+  m_Name: CageCutseneTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!58 &927168504
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927168503}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
+--- !u!4 &927168505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927168503}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.5, y: -2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &927168506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927168503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4ff117a8ef1ad4c96d1b7f0ec39370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CageCutscene
+  cage: {fileID: 172404298}
+  secondStop: {x: 18.5, y: 5, z: 0}
+  firstStop: {x: 18.5, y: -1.6, z: 0}
+  speed: 0.1
+  moving: 0
+  returning: 0
+  closedSprite: {fileID: 7913374902736317676, guid: dab269f67d99a894aa475deb1bcbc780, type: 3}
 --- !u!1 &1116868449
 GameObject:
   m_ObjectHideFlags: 0
@@ -16703,11 +16795,11 @@ Transform:
   m_GameObject: {fileID: 1116868449}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.25, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 1.25, z: 0}
   m_LocalScale: {x: 5, y: 0.50002503, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1778262779}
+  m_Father: {fileID: 172404299}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1116868451
 BoxCollider2D:
@@ -17078,6 +17170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b513e00bad42f42a3269751fa71c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThinPlatform
+  brokenSprite: {fileID: 0}
 --- !u!1 &1244378329
 GameObject:
   m_ObjectHideFlags: 0
@@ -17105,11 +17198,11 @@ Transform:
   m_GameObject: {fileID: 1244378329}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.25, y: -0.75, z: 0}
   m_LocalScale: {x: 5, y: 0.50002503, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1778262779}
+  m_Father: {fileID: 172404299}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1244378331
 BoxCollider2D:
@@ -17989,11 +18082,11 @@ Transform:
   m_GameObject: {fileID: 1516445477}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 0, z: 0}
+  m_LocalPosition: {x: -1.25, y: -0.75, z: 0}
   m_LocalScale: {x: 5, y: 0.50002503, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1778262779}
+  m_Father: {fileID: 172404299}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1516445479
 BoxCollider2D:
@@ -18650,6 +18743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b513e00bad42f42a3269751fa71c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThinPlatform
+  brokenSprite: {fileID: 0}
 --- !u!1001 &1681504305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18856,41 +18950,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1778262778
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1778262779}
-  m_Layer: 0
-  m_Name: Cage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1778262779
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778262778}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.829884, y: 3.634901, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1116868450}
-  - {fileID: 1516445478}
-  - {fileID: 1244378330}
-  - {fileID: 172404299}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1784834109
@@ -20964,7 +21023,8 @@ SceneRoots:
   - {fileID: 1784834111}
   - {fileID: 1289005662}
   - {fileID: 1127458907}
-  - {fileID: 1778262779}
+  - {fileID: 172404299}
+  - {fileID: 927168505}
   - {fileID: 2076465009}
   - {fileID: 95861521}
   - {fileID: 1789824147}
