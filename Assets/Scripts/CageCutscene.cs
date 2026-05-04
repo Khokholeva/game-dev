@@ -24,11 +24,11 @@ public class CageCutscene : MonoBehaviour
         if (moving)
         {
             var moveVector = firstStop - cage.transform.position;
-            if (moveVector.magnitude > 0.01)
+            if (moveVector.magnitude > 0.02)
                 cage.transform.position += moveVector.normalized * speed * Time.deltaTime;
             else
             {
-                player.transform.position += new Vector3(0, 0.5f, 0);
+                player.transform.position += new Vector3(0, 1f, 0);
                 cage.GetComponent<SpriteRenderer>().sprite = closedSprite;
                 cage.GetComponent<Collider2D>().enabled = true;
                 moving = false;

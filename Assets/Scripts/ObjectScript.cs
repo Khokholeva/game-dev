@@ -22,4 +22,12 @@ public class ObjectScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+	
+	private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision == null) return;
+
+        if (collision.gameObject.CompareTag("KillZone"))
+            Destroy(gameObject);
+    }
 }
