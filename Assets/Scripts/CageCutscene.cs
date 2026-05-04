@@ -25,7 +25,7 @@ public class CageCutscene : MonoBehaviour
         {
             var moveVector = firstStop - cage.transform.position;
             if (moveVector.magnitude > 0.01)
-                cage.transform.position += moveVector.normalized * speed;
+                cage.transform.position += moveVector.normalized * speed * Time.deltaTime;
             else
             {
                 player.transform.position += new Vector3(0, 0.5f, 0);
@@ -39,7 +39,7 @@ public class CageCutscene : MonoBehaviour
         {
             var moveVector = secondStop - cage.transform.position;
             if (moveVector.magnitude > 0.01)
-                cage.transform.position += moveVector.normalized * speed;
+                cage.transform.position += moveVector.normalized * speed * Time.deltaTime;
             else
             {
                 playerController.freezeControls = false;
