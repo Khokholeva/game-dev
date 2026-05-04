@@ -274,17 +274,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   speed: 3
   jumpForce: 5
+  grounded: 1
   shapePreviews:
   - {fileID: 656707057022701013, guid: cf974cdc5918e39419106069888de41c, type: 3}
+  - {fileID: 4102464514662831351, guid: 586f21c77b2525246a343dc2c22f357b, type: 3}
+  - {fileID: 1352929985027327670, guid: b9ab853e14a830448b8f4d320bf5fff6, type: 3}
   shapes:
   - {fileID: 1785769470673810989, guid: 1b09d1c1a001d4c4eb35fddc9507e898, type: 3}
-  index: 0
+  - {fileID: 851503047765620967, guid: 92273039f8a5c014aa1c4e926aada155, type: 3}
+  - {fileID: 6700859067551134069, guid: 68da284dbb7438446b61082c8c607dd7, type: 3}
+  colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0.25251967, a: 1}
+  - {r: 0.17254901, g: 0.21226558, b: 1, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0.5882353, b: 0, a: 1}
+  unlockedColors: 
+  shapeIndex: 0
+  colorIndex: 0
   mousePosition: {x: 0, y: 0, z: 0}
   spawnState: 0
   currentPreview: {fileID: 0}
+  lastShape: {fileID: 0}
   spawnZone: {fileID: 1748334267301828360}
   spawnRadius: 5
   dist: 0
+  floatingSpeed: 1
 --- !u!1 &3883209910217341399
 GameObject:
   m_ObjectHideFlags: 0

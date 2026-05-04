@@ -1,9 +1,10 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class ThinPlatform : MonoBehaviour
 {
     GameObject collision;
+    GameObject spriteObject;
+    Sprite brokenSprite;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +22,7 @@ public class ThinPlatform : MonoBehaviour
         if (collision.rigidbody != null) { 
             if (collision.rigidbody.mass > 10)
             {
+                
                 Destroy(gameObject);
             }
 

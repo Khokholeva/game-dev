@@ -42,7 +42,7 @@ public class Explosive : MonoBehaviour
                 Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
                 foreach (var hitCollider in hitColliders)
                 {
-                    if (hitCollider.gameObject.CompareTag("FragilePlatform"))
+                    if (hitCollider.gameObject.CompareTag("FragileObject"))
                     {
                        
                         Destroy(hitCollider.gameObject);

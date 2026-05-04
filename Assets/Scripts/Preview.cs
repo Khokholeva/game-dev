@@ -24,11 +24,13 @@ public class Preview : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collisionCounter++;
+        if (!collision.isTrigger)
+            collisionCounter++;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collisionCounter--;
+        if (!collision.isTrigger)
+            collisionCounter--;
     }
 }

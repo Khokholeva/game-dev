@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Button : MonoBehaviour
 {
-    public GameObject door;
+    public GameObject[] connectedObjects;
     private bool state = false;
     public GameObject tooltip;
     private bool playerClose = false;
@@ -16,6 +16,8 @@ public class Button : MonoBehaviour
     void Start()
     {
         tooltip.SetActive(false);
+        tooltip.GetComponent<TextMeshPro>().text = firstTooltip;
+        GetComponent<SpriteRenderer>().color = Color.red;
     }
 
     // Update is called once per frame
@@ -23,7 +25,8 @@ public class Button : MonoBehaviour
     {
         if (playerClose && Keyboard.current.qKey.wasPressedThisFrame)
         {
-            door.SetActive(state);
+            foreach(var obj in connectedObjects)
+                obj.SetActive(!obj.activeSelf);
             state = !state;
             if (state)
             {

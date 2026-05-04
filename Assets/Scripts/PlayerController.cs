@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject[] shapePreviews;
     public GameObject[] shapes;
+    public string[] keyTags;
     public Color[] colors;
     public bool[] unlockedColors;
     public int shapeIndex = 0;
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public float spawnRadius = 15.0f;
     public float dist;
 
-    public float floatingSpeed = 1;
+    public Vector2 spawnPosition;
 
     Preview previewScript;
 
@@ -82,16 +83,17 @@ public class PlayerController : MonoBehaviour
                     switch (colorIndex)
                     {
                         case 1:
+                            lastShape.GetComponent<Rigidbody2D>().mass = 20f; break;
+                        case 2:
+                            lastShape.AddComponent<Floating>(); break;
+                        case 3:
+                            lastShape.AddComponent<Explosive>(); break;
+                        case 4:
+                            lastShape.tag = keyTags[shapeIndex]; break;
+                        case 5:
                             lastShape.AddComponent<BouncyScript>();
                             break;
-                        case 2:
-                            lastShape.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-                            lastShape.GetComponent<Rigidbody2D>().linearVelocityY = 1;
-                            break;
-                        case 3:
-                            lastShape.GetComponent<Rigidbody2D>().mass = 20f; break;
-                        case 4:
-                            lastShape.AddComponent<Explosive>(); break;
+
                     }
                     
                     Destroy(currentPreview);
@@ -157,5 +159,9 @@ public class PlayerController : MonoBehaviour
             unlockedColors[(int)collision.transform.localScale.z] = true;
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("KillZone"))
+            rb.position = spawnPosition;
+        if (collision.gameObject.CompareTag("SpawnZone"))
+            spawnPosition = collision.transform.position;
     }
 }
