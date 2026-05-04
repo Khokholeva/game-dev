@@ -14,6 +14,6 @@ public class Floating : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocityY = 2;
+        rb.linearVelocityY = 3;
     }
 }
