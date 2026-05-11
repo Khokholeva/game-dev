@@ -7,30 +7,34 @@ public class PlayerController : MonoBehaviour
     public float accelerationRate = 1.0f;
     public float jumpForce = 5.0f;
     private Rigidbody2D rb;
-    public bool grounded = true;
+    private bool grounded = true;
 
     public GameObject[] shapePreviews;
     public GameObject[] shapes;
     public string[] keyTags;
     public Color[] colors;
     public bool[] unlockedColors;
-    public int shapeIndex = 0;
-    public int colorIndex = 0;
+    private int shapeIndex = 0;
+    private int colorIndex = 0;
 
-    public Vector3 mousePosition;
-    public bool spawnState = false;
-    public GameObject currentPreview;
-    public GameObject lastShape;
+    private Vector3 mousePosition;
+    private bool spawnState = false;
+    private GameObject currentPreview;
+    private GameObject lastShape;
 
     public GameObject spawnZone;
     public float spawnRadius = 15.0f;
-    public float dist;
+    private float dist;
 
-    public Vector2 spawnPosition;
+    private Vector2 spawnPosition;
 
     Preview previewScript;
 
     public bool freezeControls = false;
+
+    public int maxCount = 10;
+    public GameObject[] spawnedShapes;
+    public int newShapeIndex = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,6 +44,7 @@ public class PlayerController : MonoBehaviour
         spawnZone.SetActive(false);
         unlockedColors = new bool[colors.Length];
         unlockedColors[0] = true;
+        spawnedShapes = new GameObject[maxCount];
     }
 
     // Update is called once per frame
@@ -82,6 +87,10 @@ public class PlayerController : MonoBehaviour
                 if (dist <= spawnRadius && previewScript.collisionCounter == 0)
                 {
                     lastShape = Instantiate(shapes[shapeIndex], currentPreview.transform.position, new Quaternion());
+                    if (spawnedShapes[newShapeIndex] != null)
+                        Destroy(spawnedShapes[newShapeIndex]);
+                    spawnedShapes[newShapeIndex] = lastShape;
+                    newShapeIndex = (newShapeIndex + 1) % maxCount;
                     lastShape.GetComponent<SpriteRenderer>().color = colors[colorIndex];
                     switch (colorIndex)
                     {
