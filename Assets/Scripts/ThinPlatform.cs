@@ -18,7 +18,7 @@ public class ThinPlatform : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.rigidbody != null) { 
-            if (collision.rigidbody.mass > 10)
+            if (collision.rigidbody.mass > 50)
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = brokenSprite;
                 gameObject.GetComponent<Collider2D>().enabled = false;

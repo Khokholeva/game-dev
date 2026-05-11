@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class Button : MonoBehaviour
 {
     public GameObject[] connectedObjects;
+    public GameObject[] animatedObjects;
     private bool state = false;
     public GameObject tooltip;
     private bool playerClose = false;
@@ -26,6 +27,11 @@ public class Button : MonoBehaviour
         {
             foreach(var obj in connectedObjects)
                 obj.SetActive(!obj.activeSelf);
+            foreach(var obj in animatedObjects)
+            {
+                var animator = obj.GetComponent<Animator>();
+                animator.SetBool("isOpen", !animator.GetBool("isOpen"));
+            }
             state = !state;
             if (state)
             {

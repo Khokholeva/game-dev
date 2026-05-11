@@ -3,7 +3,9 @@ using UnityEngine;
 public class BouncyScript : MonoBehaviour
 {
     public float bounceForce = 10.0f;
-    public Vector2 direction;
+    public Vector2 baseDirection;
+    public Vector2 force;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,8 +20,11 @@ public class BouncyScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        direction = collision.transform.position - transform.position;
+        var isLeft = collision.transform.position.x < transform.position.x ? -1 : 1;
+        force = new Vector2(baseDirection.x * bounceForce * isLeft, baseDirection.y * bounceForce);
         if (collision.rigidbody != null)
-            collision.rigidbody.AddForce(direction * bounceForce, ForceMode2D.Impulse);
+        {
+            collision.rigidbody.AddForce(force, ForceMode2D.Impulse);
+        }
     }
 }

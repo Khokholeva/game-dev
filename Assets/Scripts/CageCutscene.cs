@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CageCutscene : MonoBehaviour
@@ -11,6 +10,9 @@ public class CageCutscene : MonoBehaviour
     public float speed;
     public bool moving = false;
     public bool returning = false;
+    float totalTime;
+    float timer;
+    Vector3 moveVector;
 
     public Sprite closedSprite;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,28 +25,31 @@ public class CageCutscene : MonoBehaviour
     {
         if (moving)
         {
-            var moveVector = firstStop - cage.transform.position;
-            if (moveVector.magnitude > 0.02)
+            if (timer < totalTime)
                 cage.transform.position += moveVector.normalized * speed * Time.deltaTime;
             else
             {
-                player.transform.position += new Vector3(0, 1f, 0);
+                //player.transform.position += new Vector3(0, 1f, 0);
                 cage.GetComponent<SpriteRenderer>().sprite = closedSprite;
                 cage.GetComponent<Collider2D>().enabled = true;
                 moving = false;
                 returning = true;
+                totalTime = (secondStop - cage.transform.position).magnitude / speed;
+                timer = 0;
+                moveVector = (secondStop - cage.transform.position).normalized;
             }
+            timer += Time.deltaTime;
         }
         if (returning)
         {
-            var moveVector = secondStop - cage.transform.position;
-            if (moveVector.magnitude > 0.01)
+            if (timer < totalTime)
                 cage.transform.position += moveVector.normalized * speed * Time.deltaTime;
             else
             {
                 playerController.freezeControls = false;
                 Destroy(gameObject);
             }
+            timer += Time.deltaTime;
         } 
     }
 
@@ -58,6 +63,9 @@ public class CageCutscene : MonoBehaviour
             playerController.freezeControls = true;
             moving = true;
             cage.GetComponent<Collider2D>().enabled = false;
+            totalTime = (firstStop - cage.transform.position).magnitude / speed;
+            timer = 0;
+            moveVector = firstStop - cage.transform.position;
         }
     }
 }

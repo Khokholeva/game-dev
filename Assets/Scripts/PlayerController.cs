@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 1.0f;
+    public float accelerationRate = 1.0f;
     public float jumpForce = 5.0f;
     private Rigidbody2D rb;
     public bool grounded = true;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        transform.position = new Vector3(-2f, -3f, 0);
         rb = GetComponent<Rigidbody2D>();
         spawnZone.SetActive(false);
         unlockedColors = new bool[colors.Length];
@@ -53,11 +55,11 @@ public class PlayerController : MonoBehaviour
             dist = (currentPreview.transform.position - transform.position).magnitude;
             if (dist > spawnRadius || previewScript.collisionCounter > 0)
             {
-                spawnZone.GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f, 0.3f);
+                spawnZone.GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f, 0.25f);
             }
             else
             {
-                spawnZone.GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0.3f, 0.3f);
+                spawnZone.GetComponent<SpriteRenderer>().color = new Color(0.7f, 1f, 0.7f, 0.25f);
             }
         }
         if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -84,7 +86,7 @@ public class PlayerController : MonoBehaviour
                     switch (colorIndex)
                     {
                         case 1:
-                            lastShape.GetComponent<Rigidbody2D>().mass = 20f; break;
+                            lastShape.GetComponent<Rigidbody2D>().mass = 100f; break;
                         case 2:
                             lastShape.AddComponent<Floating>(); break;
                         case 3:
@@ -93,6 +95,18 @@ public class PlayerController : MonoBehaviour
                             lastShape.tag = keyTags[shapeIndex]; break;
                         case 5:
                             lastShape.AddComponent<BouncyScript>();
+                            lastShape.GetComponent<Rigidbody2D>().mass = 20f;
+                            switch (shapeIndex)
+                            {
+                                case 0:
+                                    lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(0, 1f);
+                                    break;
+                                case 1:
+                                    lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(2f, 1f);
+                                    break;
+                                case 2:
+                                    lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(0f, 1f); break;
+                            }
                             break;
 
                     }
@@ -150,7 +164,12 @@ public class PlayerController : MonoBehaviour
             if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
                 dir = 1;
 
-            rb.linearVelocityX = speed * dir;
+            //rb.linearVelocityX = speed * dir;
+            float targetSpeed = dir * speed;
+            float speedDiff = targetSpeed - rb.linearVelocity.x;
+            if (grounded)
+                speedDiff *= accelerationRate;
+            rb.AddForce(speedDiff * Vector2.right, ForceMode2D.Force);
         }
         else
         {
