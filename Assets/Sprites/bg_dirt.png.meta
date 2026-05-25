@@ -1,34 +1,10 @@
 fileFormatVersion: 2
-guid: 1e416f072303c1a4bbf46442c13144bb
+guid: 21d7084f5a16c24469bcb94776eb7329
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2612383665505601816
-    second: pixil-frame-0 (20)_0
-  - first:
-      213: -257147944928422307
-    second: pixil-frame-0 (20)_1
-  - first:
-      213: 3205616633489522430
-    second: pixil-frame-0 (20)_2
-  - first:
-      213: -8390348030791020880
-    second: pixil-frame-0 (20)_3
-  - first:
-      213: -7565927160931502103
-    second: pixil-frame-0 (20)_4
-  - first:
-      213: 3009777588093703576
-    second: pixil-frame-0 (20)_5
-  - first:
-      213: 3009665657450419040
-    second: pixil-frame-0 (20)_6
-  - first:
-      213: 8317201835504796782
-    second: pixil-frame-0 (20)_7
-  - first:
-      213: -5781054939952129670
-    second: pixil-frame-0 (20)_8
+      213: 5864645229692891588
+    second: bg_dirt_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -70,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 90
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -120,203 +96,216 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-0 (20)_0
+      name: bg_dirt_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 473
-        width: 218
-        height: 74
+        x: 0
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8198e7f4a1d014420800000000000000
-      internalID: 2612383665505601816
+      spriteID: 4c1b881a3c7636150800000000000000
+      internalID: 5864645229692891588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (20)_1
+      name: bg_dirt_1
       rect:
         serializedVersion: 2
-        x: 209
-        y: 59
-        width: 134
-        height: 452
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d56d1d77e4d6e6cf0800000000000000
-      internalID: -257147944928422307
+      spriteID: 952e538b18a3fb5439271df92da7accc
+      internalID: 1878705833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (20)_2
+      name: bg_dirt_2
       rect:
         serializedVersion: 2
-        x: 47
-        y: 59
-        width: 14
-        height: 14
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: efef9351853ac7c20800000000000000
-      internalID: 3205616633489522430
+      spriteID: 61a38e43711228f4a8b7f89745df5e36
+      internalID: -1792984921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (20)_3
+      name: bg_dirt_3
       rect:
         serializedVersion: 2
-        x: 71
-        y: 59
-        width: 38
-        height: 38
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0be8dc28bee7f8b80800000000000000
-      internalID: -8390348030791020880
+      spriteID: 60204f28d89b9bf47be7f97576baefaa
+      internalID: 1126630391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (20)_4
+      name: bg_dirt_4
       rect:
         serializedVersion: 2
-        x: 125
-        y: 59
-        width: 74
-        height: 38
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9e7b238455d600790800000000000000
-      internalID: -7565927160931502103
+      spriteID: e1612b097d5721f40a0b166678b72f8b
+      internalID: -1117719778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (20)_5
+      name: bg_dirt_5
       rect:
         serializedVersion: 2
-        x: 389
-        y: 59
-        width: 86
-        height: 320
+        x: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 895d14715c0e4c920800000000000000
-      internalID: 3009777588093703576
+      spriteID: 734e2982bd316624e99f4bc925b014a2
+      internalID: 1208388644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (20)_6
+      name: bg_dirt_6
       rect:
         serializedVersion: 2
-        x: 485
-        y: 59
-        width: 14
-        height: 14
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 063560538fa74c920800000000000000
-      internalID: 3009665657450419040
+      spriteID: 0effa50f8ebab1945a5d44fd11395de1
+      internalID: -561613192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (20)_7
+      name: bg_dirt_7
       rect:
         serializedVersion: 2
-        x: 509
-        y: 59
-        width: 170
-        height: 134
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e648d72c003ac6370800000000000000
-      internalID: 8317201835504796782
+      spriteID: b5fc3caa8b0485e4e977d98cf66005b9
+      internalID: -1456882738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (20)_8
+      name: bg_dirt_8
       rect:
         serializedVersion: 2
-        x: 671
-        y: 59
-        width: 97
-        height: 62
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a79d225592195cfa0800000000000000
-      internalID: -5781054939952129670
+      spriteID: 13f87d3341dbf894395c6a7a69a72521
+      internalID: 621530776
       vertices: []
       indices: 
       edges: []
@@ -325,7 +314,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: aa8af3424bdb1ef4cacaf93f0f3cf409
     internalID: 0
     vertices: []
     indices: 
@@ -333,17 +322,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      pixil-frame-0 (20)_0: 2612383665505601816
-      pixil-frame-0 (20)_1: -257147944928422307
-      pixil-frame-0 (20)_2: 3205616633489522430
-      pixil-frame-0 (20)_3: -8390348030791020880
-      pixil-frame-0 (20)_4: -7565927160931502103
-      pixil-frame-0 (20)_5: 3009777588093703576
-      pixil-frame-0 (20)_6: 3009665657450419040
-      pixil-frame-0 (20)_7: 8317201835504796782
-      pixil-frame-0 (20)_8: -5781054939952129670
+      bg_dirt_0: 5864645229692891588
+      bg_dirt_1: 1878705833
+      bg_dirt_2: -1792984921
+      bg_dirt_3: 1126630391
+      bg_dirt_4: -1117719778
+      bg_dirt_5: 1208388644
+      bg_dirt_6: -561613192
+      bg_dirt_7: -1456882738
+      bg_dirt_8: 621530776
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
