@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public Vector3 start = new Vector3(-2f, -3f, 0);
     public float speed = 1.0f;
     public float accelerationRate = 1.0f;
     public float jumpForce = 5.0f;
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.position = new Vector3(-2f, -3f, 0);
+        transform.position = start;
         rb = GetComponent<Rigidbody2D>();
         spawnZone.SetActive(false);
         unlockedColors = new bool[colors.Length];
