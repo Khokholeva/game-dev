@@ -64954,6 +64954,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6700859067551134069, guid: 68da284dbb7438446b61082c8c607dd7, type: 3}
     - target: {fileID: 6577924532945585721, guid: c087ba11c58259c42a1d41299d559fae, type: 3}
+      propertyPath: bwVariants.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577924532945585721, guid: c087ba11c58259c42a1d41299d559fae, type: 3}
       propertyPath: 'keyTags.Array.data[0]'
       value: KeySquare
       objectReference: {fileID: 0}
@@ -65033,6 +65037,26 @@ PrefabInstance:
       propertyPath: colors.Array.data[5].r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6577924532945585721, guid: c087ba11c58259c42a1d41299d559fae, type: 3}
+      propertyPath: 'bwVariants.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1872972385}
+    - target: {fileID: 6577924532945585721, guid: c087ba11c58259c42a1d41299d559fae, type: 3}
+      propertyPath: 'bwVariants.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1711291375}
+    - target: {fileID: 6577924532945585721, guid: c087ba11c58259c42a1d41299d559fae, type: 3}
+      propertyPath: 'bwVariants.Array.data[2]'
+      value: 
+      objectReference: {fileID: 527048870}
+    - target: {fileID: 6577924532945585721, guid: c087ba11c58259c42a1d41299d559fae, type: 3}
+      propertyPath: 'bwVariants.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1370413357}
+    - target: {fileID: 6577924532945585721, guid: c087ba11c58259c42a1d41299d559fae, type: 3}
+      propertyPath: 'bwVariants.Array.data[4]'
+      value: 
+      objectReference: {fileID: 500342553}
     - target: {fileID: 6577924532945585721, guid: c087ba11c58259c42a1d41299d559fae, type: 3}
       propertyPath: shapePreviews.Array.size
       value: 4
