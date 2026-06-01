@@ -1,34 +1,10 @@
 fileFormatVersion: 2
-guid: 0546a05420f738a41a5ecbf369f7867d
+guid: 6f65df4987afd5f44ad74ecdb1eac78c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1473674048031359437
-    second: banners_0
-  - first:
-      213: 6330755285068027874
-    second: banners_1
-  - first:
-      213: -792885119239905612
-    second: banners_2
-  - first:
-      213: 4034181071335221153
-    second: banners_3
-  - first:
-      213: 4935273898511384998
-    second: banners_4
-  - first:
-      213: -766163406566443204
-    second: banners_5
-  - first:
-      213: 5552565607863149554
-    second: banners_6
-  - first:
-      213: 2017471948153172031
-    second: banners_7
-  - first:
-      213: 716687307266256017
-    second: banners_8
+      213: -840555037788854716
+    second: bw_bg_dirt 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -137,199 +113,199 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: banners_0
+      name: bw_bg_dirt 1_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 34
-        width: 92
-        height: 192
+        x: 0
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc10f932dba837410800000000000000
-      internalID: 1473674048031359437
+      spriteID: 4462e6685afb554f0800000000000000
+      internalID: -840555037788854716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: banners_1
+      name: bw_bg_dirt 1_1
       rect:
         serializedVersion: 2
-        x: 129
-        y: 34
-        width: 92
-        height: 192
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2e71866d36c5bd750800000000000000
-      internalID: 6330755285068027874
+      spriteID: 654445292684e9443903d244b1448a13
+      internalID: -1036542840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: banners_2
+      name: bw_bg_dirt 1_2
       rect:
         serializedVersion: 2
-        x: 234
-        y: 34
-        width: 92
-        height: 192
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4be13085f2b1ff4f0800000000000000
-      internalID: -792885119239905612
+      spriteID: ac74356419160b4418d120e99f25cb7e
+      internalID: 1774774727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: banners_3
+      name: bw_bg_dirt 1_3
       rect:
         serializedVersion: 2
-        x: 354
-        y: 74
-        width: 92
-        height: 152
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1a76a847f4a4cf730800000000000000
-      internalID: 4034181071335221153
+      spriteID: 914f4e6ff47c06246b14444ccc4dfd54
+      internalID: -195450392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: banners_4
+      name: bw_bg_dirt 1_4
       rect:
         serializedVersion: 2
-        x: 469
-        y: 74
-        width: 92
-        height: 152
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6a14706667d9d7440800000000000000
-      internalID: 4935273898511384998
+      spriteID: bfbc646936553ec4590e65af2a5a9e27
+      internalID: 1044067015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: banners_5
+      name: bw_bg_dirt 1_5
       rect:
         serializedVersion: 2
-        x: 574
-        y: 74
-        width: 92
-        height: 152
+        x: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c3734b7e07a0e55f0800000000000000
-      internalID: -766163406566443204
+      spriteID: e0a6f9112ff84e547becc03bced878f3
+      internalID: 165788811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: banners_6
+      name: bw_bg_dirt 1_6
       rect:
         serializedVersion: 2
-        x: 684
+        x: 0
         y: 0
-        width: 92
-        height: 246
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2f3ebb8600dae0d40800000000000000
-      internalID: 5552565607863149554
+      spriteID: 809fc5850dca10e429c0c51d628c5626
+      internalID: 1142604644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: banners_7
+      name: bw_bg_dirt 1_7
       rect:
         serializedVersion: 2
-        x: 799
+        x: 64
         y: 0
-        width: 92
-        height: 246
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f303cfd3c008ffb10800000000000000
-      internalID: 2017471948153172031
+      spriteID: 08ed25e79b4c84f49a12cd4a58df4653
+      internalID: 1998263513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: banners_8
+      name: bw_bg_dirt 1_8
       rect:
         serializedVersion: 2
-        x: 904
+        x: 128
         y: 0
-        width: 92
-        height: 246
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 19ce2ac0f4f22f900800000000000000
-      internalID: 716687307266256017
+      spriteID: 335f494e1b9dce246981fa175208ca39
+      internalID: 909690557
       vertices: []
       indices: 
       edges: []
@@ -338,7 +314,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 2544d4107f80f084388ff886038834fe
     internalID: 0
     vertices: []
     indices: 
@@ -346,17 +322,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      banners_0: 1473674048031359437
-      banners_1: 6330755285068027874
-      banners_2: -792885119239905612
-      banners_3: 4034181071335221153
-      banners_4: 4935273898511384998
-      banners_5: -766163406566443204
-      banners_6: 5552565607863149554
-      banners_7: 2017471948153172031
-      banners_8: 716687307266256017
+      bw_bg_dirt 1_0: -840555037788854716
+      bw_bg_dirt 1_1: -1036542840
+      bw_bg_dirt 1_2: 1774774727
+      bw_bg_dirt 1_3: -195450392
+      bw_bg_dirt 1_4: 1044067015
+      bw_bg_dirt 1_5: 165788811
+      bw_bg_dirt 1_6: 1142604644
+      bw_bg_dirt 1_7: 1998263513
+      bw_bg_dirt 1_8: 909690557
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
