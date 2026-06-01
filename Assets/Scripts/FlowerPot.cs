@@ -22,10 +22,11 @@ public class FlowerPot : MonoBehaviour
         if (collision.gameObject.CompareTag("Droplet"))
         {
             dropletCounter -= 1;
-            if (dropletCounter <= 0)
+            if (dropletCounter == 0)
             {
                 var animator = gameObject.GetComponent<Animator>();
-                animator.SetBool("isWater", true);
+                animator.SetBool("IsWater", true);
+
                 collectible.SetActive(true);
             }
         }
