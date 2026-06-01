@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public Vector3 start = new Vector3(-2f, -3f, 0);
+    public Vector3 start = new Vector3(-20f, -3f, 0);
     public float speed = 1.0f;
     public float accelerationRate = 1.0f;
     public float jumpForce = 5.0f;
@@ -34,8 +35,7 @@ public class PlayerController : MonoBehaviour
     public bool freezeControls = false;
 
     public int maxCount = 10;
-    public GameObject[] spawnedShapes;
-    public int newShapeIndex = 0;
+    public LinkedList<GameObject> spawnedShapes;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         spawnZone.SetActive(false);
         unlockedColors = new bool[colors.Length];
         unlockedColors[0] = true;
-        spawnedShapes = new GameObject[maxCount];
+        spawnedShapes = new LinkedList<GameObject>();
     }
 
     // Update is called once per frame
@@ -88,15 +88,18 @@ public class PlayerController : MonoBehaviour
                 if (dist <= spawnRadius && previewScript.collisionCounter == 0)
                 {
                     lastShape = Instantiate(shapes[shapeIndex], currentPreview.transform.position, new Quaternion());
-                    if (spawnedShapes[newShapeIndex] != null)
-                        Destroy(spawnedShapes[newShapeIndex]);
-                    spawnedShapes[newShapeIndex] = lastShape;
-                    newShapeIndex = (newShapeIndex + 1) % maxCount;
+                    spawnedShapes.AddLast(lastShape);
                     lastShape.GetComponent<SpriteRenderer>().color = colors[colorIndex];
+                    lastShape.GetComponent<ObjectScript>().objectList = spawnedShapes;
+                    if (spawnedShapes.Count > maxCount)
+                    {
+                        Destroy(spawnedShapes.First.Value);
+                        spawnedShapes.RemoveFirst();
+                    }
                     switch (colorIndex)
                     {
                         case 1:
-                            lastShape.GetComponent<Rigidbody2D>().mass = 100f; break;
+                            lastShape.GetComponent<Rigidbody2D>().mass = 15f; break;
                         case 2:
                             lastShape.AddComponent<Floating>(); break;
                         case 3:
@@ -105,7 +108,7 @@ public class PlayerController : MonoBehaviour
                             lastShape.tag = keyTags[shapeIndex]; break;
                         case 5:
                             lastShape.AddComponent<BouncyScript>();
-                            lastShape.GetComponent<Rigidbody2D>().mass = 20f;
+                            lastShape.GetComponent<Rigidbody2D>().mass = 40f;
                             switch (shapeIndex)
                             {
                                 case 0:

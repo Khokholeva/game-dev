@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class ObjectScript : MonoBehaviour
 {
+    public LinkedList<GameObject> objectList;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +21,7 @@ public class ObjectScript : MonoBehaviour
     {
         if (Keyboard.current.fKey.wasPressedThisFrame)
         {
+            objectList.Remove(gameObject);
             Destroy(gameObject);
         }
     }
