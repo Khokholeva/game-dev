@@ -24,7 +24,8 @@ public class BouncyScript : MonoBehaviour
         force = new Vector2(baseDirection.x * bounceForce * isLeft, baseDirection.y * bounceForce);
         if (collision.rigidbody != null)
         {
-            collision.rigidbody.AddForce(force, ForceMode2D.Impulse);
+            var mass = collision.gameObject.GetComponent<Rigidbody2D>().mass;
+            collision.rigidbody.AddForce(force * mass, ForceMode2D.Impulse);
         }
     }
 }
