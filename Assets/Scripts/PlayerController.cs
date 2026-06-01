@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     public int maxCount = 10;
     public LinkedList<GameObject> spawnedShapes;
 
+    public GameObject[] bwVariants;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -197,6 +199,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("ColorUnlock"))
         {
             unlockedColors[(int)collision.transform.localScale.z] = true;
+            bwVariants[(int)collision.transform.localScale.z - 1].SetActive(false);
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("KillZone"))

@@ -17,6 +17,11 @@ TagManager:
   - SpawnZone
   - KeyPlatform
   - Droplet
+  - BW_Green
+  - BW_Brown
+  - BW_Red
+  - BW_Blue
+  - BW_Orange
   layers:
   - Default
   - TransparentFX
