@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: fc0f99ddcd134834bbe4aa3d5ec516de
+guid: cab1b8907f27a794aa20c9cb8cfc9953
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7449937116616188578
-    second: bw_bricks_6_0
+      213: -194818066077126744
+    second: flowers_0
+  - first:
+      213: 7702638131693110658
+    second: flowers_1
+  - first:
+      213: 1688127093310603583
+    second: flowers_2
+  - first:
+      213: 7958929529641746168
+    second: flowers_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bw_bricks_6_0
+      name: flowers_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 13
-        width: 59
-        height: 51
-      alignment: 9
-      pivot: {x: 0.44, y: 0.38}
+        x: 44
+        y: 304
+        width: 212
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5d1815f9a18c9890800000000000000
-      internalID: -7449937116616188578
+      spriteID: 8afe4a7400edb4df0800000000000000
+      internalID: -194818066077126744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowers_1
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 329
+        width: 92
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28542f8029445ea60800000000000000
+      internalID: 7702638131693110658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowers_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 204
+        width: 147
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f31cd74b5ae6d6710800000000000000
+      internalID: 1688127093310603583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flowers_3
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 194
+        width: 82
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8feb9ae2d3cc37e60800000000000000
+      internalID: 7958929529641746168
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d4e62eaac132de14fb393b64c95bdb56
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bw_bricks_6_0: -7449937116616188578
+      flowers_0: -194818066077126744
+      flowers_1: 7702638131693110658
+      flowers_2: 1688127093310603583
+      flowers_3: 7958929529641746168
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

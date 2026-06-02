@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: fc0f99ddcd134834bbe4aa3d5ec516de
+guid: bec458fcf15690142a9bda40a79810c9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7449937116616188578
-    second: bw_bricks_6_0
+      213: 8783968540369780502
+    second: bw_candels_0
+  - first:
+      213: -8389960415032478074
+    second: bw_candels_1
+  - first:
+      213: 7135701374924618507
+    second: bw_candels_2
+  - first:
+      213: 1688970510963289186
+    second: bw_candels_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,23 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bw_bricks_6_0
+      name: bw_candels_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 13
-        width: 59
-        height: 51
-      alignment: 9
-      pivot: {x: 0.44, y: 0.38}
+        x: 9
+        y: 229
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5d1815f9a18c9890800000000000000
-      internalID: -7449937116616188578
+      spriteID: 61f72f619dce6e970800000000000000
+      internalID: 8783968540369780502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_candels_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 229
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6867666547fd09b80800000000000000
+      internalID: -8389960415032478074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_candels_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 64
+        width: 102
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0bf5ab089a170360800000000000000
+      internalID: 7135701374924618507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_candels_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 134
+        width: 102
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ca31e2bbd607710800000000000000
+      internalID: 1688970510963289186
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d4e62eaac132de14fb393b64c95bdb56
+    spriteID: 7e46401a45ff07545a6869b0bab95c0a
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bw_bricks_6_0: -7449937116616188578
+      bw_candels_0: 8783968540369780502
+      bw_candels_1: -8389960415032478074
+      bw_candels_2: 7135701374924618507
+      bw_candels_3: 1688970510963289186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

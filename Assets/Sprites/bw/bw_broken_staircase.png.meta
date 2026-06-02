@@ -1,22 +1,34 @@
 fileFormatVersion: 2
-guid: 4db0153ee288f3e47900fe3076c6d6a9
+guid: 1eb9fb14f48e7f94f878f3f914a35a00
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7574195687997732042
-    second: bw_drawbridge_0
+      213: -4698520246846698561
+    second: bw_broken_staircase_0
   - first:
-      213: -7715079450208097883
-    second: bw_drawbridge_1
+      213: -8481972262571096347
+    second: bw_broken_staircase_1
   - first:
-      213: -2109590960892814179
-    second: bw_drawbridge_2
+      213: 8077199409879353444
+    second: bw_broken_staircase_2
   - first:
-      213: -1866739891438005859
-    second: bw_drawbridge_3
+      213: 4389919887977524432
+    second: bw_broken_staircase_3
   - first:
-      213: -1853517094212305099
-    second: bw_drawbridge_4
+      213: 5466115237793111376
+    second: bw_broken_staircase_4
+  - first:
+      213: -8654037324039069760
+    second: bw_broken_staircase_5
+  - first:
+      213: -5692223500011667618
+    second: bw_broken_staircase_6
+  - first:
+      213: 239157770415204456
+    second: bw_broken_staircase_7
+  - first:
+      213: 334956581562956689
+    second: bw_broken_staircase_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +70,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -125,13 +137,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bw_drawbridge_0
+      name: bw_broken_staircase_0
       rect:
         serializedVersion: 2
-        x: 319
-        y: 7
-        width: 82
-        height: 386
+        x: 5
+        y: 473
+        width: 218
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac4766239d2fc1960800000000000000
-      internalID: 7574195687997732042
+      spriteID: fbbc8b4bab08bceb0800000000000000
+      internalID: -4698520246846698561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bw_drawbridge_1
+      name: bw_broken_staircase_1
       rect:
         serializedVersion: 2
-        x: 607
-        y: 7
-        width: 194
-        height: 386
+        x: 209
+        y: 59
+        width: 134
+        height: 452
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a92e64cd188ee490800000000000000
-      internalID: -7715079450208097883
+      spriteID: 5e6cbb6aa2bf94a80800000000000000
+      internalID: -8481972262571096347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bw_drawbridge_2
+      name: bw_broken_staircase_2
       rect:
         serializedVersion: 2
-        x: 895
-        y: 15
-        width: 306
-        height: 378
+        x: 47
+        y: 59
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9cdb9ab23a39b2e0800000000000000
-      internalID: -2109590960892814179
+      spriteID: 4688ad5811af71070800000000000000
+      internalID: 8077199409879353444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bw_drawbridge_3
+      name: bw_broken_staircase_3
       rect:
         serializedVersion: 2
-        x: 1223
-        y: 15
-        width: 378
-        height: 378
+        x: 71
+        y: 59
+        width: 38
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9159ca85f10816e0800000000000000
-      internalID: -1866739891438005859
+      spriteID: 0dca25b11e02cec30800000000000000
+      internalID: 4389919887977524432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bw_drawbridge_4
+      name: bw_broken_staircase_4
       rect:
         serializedVersion: 2
-        x: 1607
-        y: 7
-        width: 393
-        height: 386
+        x: 125
+        y: 59
+        width: 74
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +240,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53f7c5ee50cf646e0800000000000000
-      internalID: -1853517094212305099
+      spriteID: 05d120a19da8bdb40800000000000000
+      internalID: 5466115237793111376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_broken_staircase_5
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 59
+        width: 86
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cfdda3a7eea6e780800000000000000
+      internalID: -8654037324039069760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_broken_staircase_6
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 59
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f7caba2e82101b0800000000000000
+      internalID: -5692223500011667618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_broken_staircase_7
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 59
+        width: 170
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8686fde99b8a15300800000000000000
+      internalID: 239157770415204456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_broken_staircase_8
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 59
+        width: 97
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b3d3b7c3106a400800000000000000
+      internalID: 334956581562956689
       vertices: []
       indices: 
       edges: []
@@ -238,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +348,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bw_drawbridge_0: 7574195687997732042
-      bw_drawbridge_1: -7715079450208097883
-      bw_drawbridge_2: -2109590960892814179
-      bw_drawbridge_3: -1866739891438005859
-      bw_drawbridge_4: -1853517094212305099
+      bw_broken_staircase_0: -4698520246846698561
+      bw_broken_staircase_1: -8481972262571096347
+      bw_broken_staircase_2: 8077199409879353444
+      bw_broken_staircase_3: 4389919887977524432
+      bw_broken_staircase_4: 5466115237793111376
+      bw_broken_staircase_5: -8654037324039069760
+      bw_broken_staircase_6: -5692223500011667618
+      bw_broken_staircase_7: 239157770415204456
+      bw_broken_staircase_8: 334956581562956689
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

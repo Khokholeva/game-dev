@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: fc0f99ddcd134834bbe4aa3d5ec516de
+guid: f293a78ed2695a543bb1fb886d30a8e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7449937116616188578
-    second: bw_bricks_6_0
+      213: 1075993247170539406
+    second: cat_0
+  - first:
+      213: 3463857228526754693
+    second: cat_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +116,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bw_bricks_6_0
+      name: cat_1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 13
-        width: 59
-        height: 51
-      alignment: 9
-      pivot: {x: 0.44, y: 0.38}
+        x: 49
+        y: 114
+        width: 107
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5d1815f9a18c9890800000000000000
-      internalID: -7449937116616188578
+      spriteID: 58b910b0cc7121030800000000000000
+      internalID: 3463857228526754693
       vertices: []
       indices: 
       edges: []
@@ -138,7 +141,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d4e62eaac132de14fb393b64c95bdb56
+    spriteID: 1e9ad605ae04fa148a2a41bb4d096ec1
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +151,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bw_bricks_6_0: -7449937116616188578
+      cat_0: 1075993247170539406
+      cat_1: 3463857228526754693
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

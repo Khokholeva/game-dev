@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fc0f99ddcd134834bbe4aa3d5ec516de
+guid: db5db8b2a84132744b123403890983e1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7449937116616188578
-    second: bw_bricks_6_0
+      213: -8682689253385200311
+    second: bw_boom_door_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bw_bricks_6_0
+      name: bw_boom_door_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 13
-        width: 59
-        height: 51
-      alignment: 9
-      pivot: {x: 0.44, y: 0.38}
+        x: 0
+        y: 0
+        width: 64
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5d1815f9a18c9890800000000000000
-      internalID: -7449937116616188578
+      spriteID: 94d9fdc7024e08780800000000000000
+      internalID: -8682689253385200311
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d4e62eaac132de14fb393b64c95bdb56
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bw_bricks_6_0: -7449937116616188578
+      bw_boom_door_0: -8682689253385200311
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

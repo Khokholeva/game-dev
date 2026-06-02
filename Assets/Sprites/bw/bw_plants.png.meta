@@ -1,22 +1,37 @@
 fileFormatVersion: 2
-guid: 4db0153ee288f3e47900fe3076c6d6a9
+guid: 8c7286197b76bd34eb09d0949f7f31cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7574195687997732042
-    second: bw_drawbridge_0
+      213: 5983554705268361292
+    second: bw_plants_0
   - first:
-      213: -7715079450208097883
-    second: bw_drawbridge_1
+      213: 5953099222782126979
+    second: bw_plants_1
   - first:
-      213: -2109590960892814179
-    second: bw_drawbridge_2
+      213: 4418274392993540855
+    second: bw_plants_2
   - first:
-      213: -1866739891438005859
-    second: bw_drawbridge_3
+      213: 4231739009386468472
+    second: bw_plants_3
   - first:
-      213: -1853517094212305099
-    second: bw_drawbridge_4
+      213: -2939427544646695234
+    second: bw_plants_4
+  - first:
+      213: -3841563123457569715
+    second: bw_plants_5
+  - first:
+      213: 6949323061428740857
+    second: bw_plants_6
+  - first:
+      213: 6687341234563581706
+    second: bw_plants_7
+  - first:
+      213: 8869616040251515934
+    second: bw_plants_8
+  - first:
+      213: 3329369538089957764
+    second: bw_plants_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,13 +140,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bw_drawbridge_0
+      name: bw_plants_0
       rect:
         serializedVersion: 2
-        x: 319
-        y: 7
-        width: 82
-        height: 386
+        x: 56
+        y: 644
+        width: 212
+        height: 182
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac4766239d2fc1960800000000000000
-      internalID: 7574195687997732042
+      spriteID: c4843ad5d4bd90350800000000000000
+      internalID: 5983554705268361292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bw_drawbridge_1
+      name: bw_plants_1
       rect:
         serializedVersion: 2
-        x: 607
-        y: 7
-        width: 194
-        height: 386
+        x: 299
+        y: 644
+        width: 110
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a92e64cd188ee490800000000000000
-      internalID: -7715079450208097883
+      spriteID: 38b2596c338ad9250800000000000000
+      internalID: 5953099222782126979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bw_drawbridge_2
+      name: bw_plants_2
       rect:
         serializedVersion: 2
-        x: 895
-        y: 15
-        width: 306
-        height: 378
+        x: 443
+        y: 644
+        width: 113
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9cdb9ab23a39b2e0800000000000000
-      internalID: -2109590960892814179
+      spriteID: 7faa592c62dd05d30800000000000000
+      internalID: 4418274392993540855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bw_drawbridge_3
+      name: bw_plants_3
       rect:
         serializedVersion: 2
-        x: 1223
-        y: 15
-        width: 378
-        height: 378
+        x: 95
+        y: 515
+        width: 71
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9159ca85f10816e0800000000000000
-      internalID: -1866739891438005859
+      spriteID: 874d4a455382aba30800000000000000
+      internalID: 4231739009386468472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bw_drawbridge_4
+      name: bw_plants_4
       rect:
         serializedVersion: 2
-        x: 1607
-        y: 7
-        width: 393
-        height: 386
+        x: 200
+        y: 515
+        width: 71
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +243,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53f7c5ee50cf646e0800000000000000
-      internalID: -1853517094212305099
+      spriteID: eb6c55ec83e0537d0800000000000000
+      internalID: -2939427544646695234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_plants_5
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 515
+        width: 71
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c421451b600bac0800000000000000
+      internalID: -3841563123457569715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_plants_6
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 515
+        width: 92
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2e3e95184f07060800000000000000
+      internalID: 6949323061428740857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_plants_7
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 515
+        width: 89
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a070cf9fb653ecc50800000000000000
+      internalID: 6687341234563581706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_plants_8
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 515
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e146c4d9bc4371b70800000000000000
+      internalID: 8869616040251515934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bw_plants_9
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 515
+        width: 41
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489bbd384fb443e20800000000000000
+      internalID: 3329369538089957764
       vertices: []
       indices: 
       edges: []
@@ -248,11 +373,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bw_drawbridge_0: 7574195687997732042
-      bw_drawbridge_1: -7715079450208097883
-      bw_drawbridge_2: -2109590960892814179
-      bw_drawbridge_3: -1866739891438005859
-      bw_drawbridge_4: -1853517094212305099
+      bw_plants_0: 5983554705268361292
+      bw_plants_1: 5953099222782126979
+      bw_plants_2: 4418274392993540855
+      bw_plants_3: 4231739009386468472
+      bw_plants_4: -2939427544646695234
+      bw_plants_5: -3841563123457569715
+      bw_plants_6: 6949323061428740857
+      bw_plants_7: 6687341234563581706
+      bw_plants_8: 8869616040251515934
+      bw_plants_9: 3329369538089957764
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
