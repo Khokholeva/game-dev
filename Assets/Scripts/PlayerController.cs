@@ -149,6 +149,7 @@ public class PlayerController : MonoBehaviour
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {
                 shapeIndex = (shapeIndex + 1) % shapePreviews.Length;
+                pauseMenu.ChooseShape(shapeIndex);
                 if (currentPreview != null)
                 {
                     Destroy(currentPreview);

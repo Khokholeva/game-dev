@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     public bool inControls;
     public bool inIntro;
     public GameObject[] colorHide;
+    public GameObject[] shapeSelect;
     public GameObject colorSelector;
     public GameObject player;
     public PlayerController playerController;
@@ -95,6 +96,15 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         playerController.freezeControls = true;
+    }
+
+    public void ChooseShape(int shape)
+    {
+        foreach (var obj in shapeSelect)
+        {
+            obj.SetActive(false);
+        }
+        shapeSelect[shape].SetActive(true);
     }
 
     public void ResumeGame()
