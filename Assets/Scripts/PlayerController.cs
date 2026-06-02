@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public LinkedList<GameObject> spawnedShapes;
 
     public GameObject[] bwVariants;
+    public Vector3[] moveCamera;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -199,7 +202,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("ColorUnlock"))
         {
             unlockedColors[(int)collision.transform.localScale.z] = true;
-            bwVariants[(int)collision.transform.localScale.z - 1].SetActive(false);
+            StartCoroutine(UnlockColorCutscene((int)collision.transform.localScale.z - 1));
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("KillZone"))
@@ -207,4 +210,54 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("SpawnZone"))
             spawnPosition = collision.transform.position;
     }
+
+    IEnumerator UnlockColorCutscene(int color)
+    {
+        var bwObjects = bwVariants[color];
+        var moveVector = moveCamera[color];
+        var moved = new Vector3(0, 0, 0);
+       
+        freezeControls = true;
+        
+        while ((moved - moveVector).magnitude > 0.5)
+        {
+            Camera.main.transform.position += (moveVector).normalized * Time.deltaTime * 10;
+            moved += (moveVector).normalized * Time.deltaTime * 10;
+            if (Camera.main.orthographicSize < 10)
+                Camera.main.orthographicSize += Time.deltaTime * 5;
+            yield return new WaitForEndOfFrame();
+        }
+        while (Camera.main.orthographicSize < 10)
+        {
+            Camera.main.orthographicSize += Time.deltaTime * 5;
+            yield return new WaitForEndOfFrame();
+        }
+
+        // This pauses ExecuteSequence until LongTask completely finishes
+        foreach (Transform child in bwObjects.transform)
+        {
+            child.gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        var startPos = transform.position + new Vector3(0, 1, -10);
+        while ((Camera.main.transform.position - startPos).magnitude > 0.5)
+        {
+            Camera.main.transform.position += (startPos - Camera.main.transform.position).normalized * Time.deltaTime * 10;
+            if (Camera.main.orthographicSize > 6)
+                Camera.main.orthographicSize -= Time.deltaTime * 5;
+            yield return new WaitForEndOfFrame();
+        }
+        Camera.main.transform.position = startPos;
+
+        while (Camera.main.orthographicSize > 6)
+        {
+            Camera.main.orthographicSize -= Time.deltaTime * 5;
+            yield return new WaitForEndOfFrame();
+        }
+        Camera.main.orthographicSize = 6;
+        freezeControls = false;
+    }
+
+
 }
