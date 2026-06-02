@@ -8,7 +8,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject controlPanel;
     public bool isPaused;
     public bool inControls;
-
+    public GameObject[] colorHide;
+    public GameObject colorSelector;
 
     void Start()
     {
@@ -40,6 +41,16 @@ public class PauseMenu : MonoBehaviour
                 PauseGame();
             }
         }
+    }
+
+    public void UnlockColor(int color)
+    {
+        colorHide[color].SetActive(false);
+    }
+
+    public void ChooseColor(int color)
+    {
+        colorSelector.GetComponent<RectTransform>().anchoredPosition = new Vector3(-500 + color * 70, 220, 0);  
     }
 
     public void PauseGame()

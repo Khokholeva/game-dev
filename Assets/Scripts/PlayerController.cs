@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject[] bwVariants;
     public Vector3[] moveCamera;
+    public GameObject ui;
+    private PauseMenu pauseMenu;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour
         unlockedColors = new bool[colors.Length];
         unlockedColors[0] = true;
         spawnedShapes = new LinkedList<GameObject>();
+        pauseMenu = ui.GetComponent<PauseMenu>();
     }
 
     // Update is called once per frame
@@ -120,7 +123,7 @@ public class PlayerController : MonoBehaviour
                                     lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(0, 1f);
                                     break;
                                 case 1:
-                                    lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(2f, 1f);
+                                    lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(2f, 1.2f);
                                     break;
                                 case 2:
                                     lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(0f, 1f); break;
@@ -163,11 +166,13 @@ public class PlayerController : MonoBehaviour
         {
             colorIndex = (colorIndex + 1) % colors.Length;
             while (!unlockedColors[colorIndex]) colorIndex = (colorIndex + 1) % colors.Length;
+            pauseMenu.ChooseColor(colorIndex);
             if (currentPreview != null)
             {
                 var color = colors[colorIndex];
                 color.a = 0.5f;
                 currentPreview.GetComponent<SpriteRenderer>().color = color;
+                
             }
         }
     }
@@ -201,8 +206,10 @@ public class PlayerController : MonoBehaviour
         if (collision == null) return;
         if (collision.gameObject.CompareTag("ColorUnlock"))
         {
-            unlockedColors[(int)collision.transform.localScale.z] = true;
-            StartCoroutine(UnlockColorCutscene((int)collision.transform.localScale.z - 1));
+            var color = (int)collision.transform.localScale.z;
+            unlockedColors[color] = true;
+            pauseMenu.UnlockColor(color - 1);
+            StartCoroutine(UnlockColorCutscene(color - 1));
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("KillZone"))
