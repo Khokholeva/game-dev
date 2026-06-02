@@ -55,7 +55,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Retry()
     {
-        //todo
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Reload it cleanly from scratch
+        SceneManager.LoadScene(currentSceneIndex);
+
+        Time.timeScale = 1f;
+        isPaused = false;
     }
 
     public void GoToMainMenu()

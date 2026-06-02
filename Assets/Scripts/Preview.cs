@@ -24,13 +24,15 @@ public class Preview : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.isTrigger)
+        if (collision == null) return;
+        if (!collision.isTrigger && !collision.CompareTag("Droplet"))
             collisionCounter++;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.isTrigger)
+        if (collision == null) return;
+        if (!collision.isTrigger && !collision.CompareTag("Droplet"))
             collisionCounter--;
     }
 }
