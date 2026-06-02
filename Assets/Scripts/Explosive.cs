@@ -44,7 +44,6 @@ public class Explosive : MonoBehaviour
                 {
                     if (hitCollider.gameObject.CompareTag("FragileObject"))
                     {
-                       
                         Destroy(hitCollider.gameObject);
                     }
                 }

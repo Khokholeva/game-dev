@@ -17,6 +17,9 @@ TagManager:
   - SpawnZone
   - KeyPlatform
   - Droplet
+  - BW_Brown
+  - BW_Green
+  - Villain
   layers:
   - Default
   - TransparentFX

@@ -1,36 +1,65 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Reflection;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
     public GameObject controlPanel;
+    public GameObject uiPanel;
     public bool isPaused;
     public bool inControls;
+    public bool inIntro;
     public GameObject[] colorHide;
     public GameObject colorSelector;
     public GameObject player;
     public PlayerController playerController;
+    public GameObject introImage;
 
     void Start()
     {
         playerController = player.GetComponent<PlayerController>();
+        playerController.freezeControls = true;
+        inIntro = true;
         if (pauseMenuPanel != null)
         {
             pauseMenuPanel.SetActive(false);
         }
-        if (pauseMenuPanel != null)
+        if (controlPanel != null)
         {
             controlPanel.SetActive(false);
         }
+        if (uiPanel != null)
+        {
+            uiPanel.SetActive(false);
+        }
+        StartCoroutine(Intro());
+    }
+
+    IEnumerator Intro()
+    {
+        yield return new WaitForSeconds(20);
+        if (uiPanel != null)
+        {
+            uiPanel.SetActive(true);
+        }
+        playerController.freezeControls = false;
+        introImage.SetActive(false);
     }
 
     void Update()
     {
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (inControls)
+            if (inIntro)
+            {
+                inIntro = false;
+                playerController.freezeControls = false;
+                introImage.SetActive(false);
+            }
+            else if (inControls)
             {
                 controlPanel.SetActive(false);
                 inControls = false;
