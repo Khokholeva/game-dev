@@ -60,119 +60,121 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (!freezeControls)
+        {
             if (Keyboard.current.spaceKey.wasPressedThisFrame && grounded)
             {
                 rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             }
-        if (spawnState)
-        {
-            dist = (currentPreview.transform.position - transform.position).magnitude;
-            if (dist > spawnRadius || previewScript.collisionCounter > 0)
+            if (spawnState)
             {
-                spawnZone.GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f, 0.25f);
-            }
-            else
-            {
-                spawnZone.GetComponent<SpriteRenderer>().color = new Color(0.7f, 1f, 0.7f, 0.25f);
-            }
-        }
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            if (!spawnState)
-            {
-                mousePosition = Mouse.current.position.ReadValue();
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-                currentPreview = Instantiate(shapePreviews[shapeIndex], mousePosition, new Quaternion(), this.transform);
-                var color = colors[colorIndex];
-                color.a = 0.4f;
-                currentPreview.GetComponent<SpriteRenderer>().color = color;
-                previewScript = currentPreview.GetComponent<Preview>();
-                spawnState = true;
-                spawnZone.SetActive(true);
-            }
-            else
-            {
-                var dist = (currentPreview.transform.position - transform.position).magnitude;
-                if (dist <= spawnRadius && previewScript.collisionCounter == 0)
+                dist = (currentPreview.transform.position - transform.position).magnitude;
+                if (dist > spawnRadius || previewScript.collisionCounter > 0)
                 {
-                    lastShape = Instantiate(shapes[shapeIndex], currentPreview.transform.position, new Quaternion());
-                    spawnedShapes.AddLast(lastShape);
-                    lastShape.GetComponent<SpriteRenderer>().color = colors[colorIndex];
-                    lastShape.GetComponent<ObjectScript>().objectList = spawnedShapes;
-                    if (spawnedShapes.Count > maxCount)
-                    {
-                        Destroy(spawnedShapes.First.Value);
-                        spawnedShapes.RemoveFirst();
-                    }
-                    switch (colorIndex)
-                    {
-                        case 1:
-                            lastShape.GetComponent<Rigidbody2D>().mass = 15f; break;
-                        case 2:
-                            lastShape.AddComponent<Floating>(); break;
-                        case 3:
-                            lastShape.AddComponent<Explosive>(); break;
-                        case 4:
-                            lastShape.tag = keyTags[shapeIndex]; break;
-                        case 5:
-                            lastShape.AddComponent<BouncyScript>();
-                            lastShape.GetComponent<Rigidbody2D>().mass = 40f;
-                            switch (shapeIndex)
-                            {
-                                case 0:
-                                    lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(0, 1f);
-                                    break;
-                                case 1:
-                                    lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(2f, 1.2f);
-                                    break;
-                                case 2:
-                                    lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(0f, 1f); break;
-                            }
-                            break;
-
-                    }
-
-                    Destroy(currentPreview);
-                    currentPreview = null;
-                    spawnZone.SetActive(false);
-                    spawnState = false;
+                    spawnZone.GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f, 0.25f);
+                }
+                else
+                {
+                    spawnZone.GetComponent<SpriteRenderer>().color = new Color(0.7f, 1f, 0.7f, 0.25f);
                 }
             }
-        }
-        if (Mouse.current.rightButton.wasPressedThisFrame && spawnState)
-        {
-            Destroy(currentPreview);
-            currentPreview = null;
-            spawnZone.SetActive(false);
-            spawnState = false;
-        }
-        if (Keyboard.current.eKey.wasPressedThisFrame)
-        {
-            shapeIndex = (shapeIndex + 1) % shapePreviews.Length;
-            if (currentPreview != null)
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                if (!spawnState)
+                {
+                    mousePosition = Mouse.current.position.ReadValue();
+                    mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                    currentPreview = Instantiate(shapePreviews[shapeIndex], mousePosition, new Quaternion(), this.transform);
+                    var color = colors[colorIndex];
+                    color.a = 0.4f;
+                    currentPreview.GetComponent<SpriteRenderer>().color = color;
+                    previewScript = currentPreview.GetComponent<Preview>();
+                    spawnState = true;
+                    spawnZone.SetActive(true);
+                }
+                else
+                {
+                    var dist = (currentPreview.transform.position - transform.position).magnitude;
+                    if (dist <= spawnRadius && previewScript.collisionCounter == 0)
+                    {
+                        lastShape = Instantiate(shapes[shapeIndex], currentPreview.transform.position, new Quaternion());
+                        spawnedShapes.AddLast(lastShape);
+                        lastShape.GetComponent<SpriteRenderer>().color = colors[colorIndex];
+                        lastShape.GetComponent<ObjectScript>().objectList = spawnedShapes;
+                        if (spawnedShapes.Count > maxCount)
+                        {
+                            Destroy(spawnedShapes.First.Value);
+                            spawnedShapes.RemoveFirst();
+                        }
+                        switch (colorIndex)
+                        {
+                            case 1:
+                                lastShape.GetComponent<Rigidbody2D>().mass = 15f; break;
+                            case 2:
+                                lastShape.AddComponent<Floating>(); break;
+                            case 3:
+                                lastShape.AddComponent<Explosive>(); break;
+                            case 4:
+                                lastShape.tag = keyTags[shapeIndex]; break;
+                            case 5:
+                                lastShape.AddComponent<BouncyScript>();
+                                lastShape.GetComponent<Rigidbody2D>().mass = 40f;
+                                switch (shapeIndex)
+                                {
+                                    case 0:
+                                        lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(0, 1f);
+                                        break;
+                                    case 1:
+                                        lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(2f, 1.2f);
+                                        break;
+                                    case 2:
+                                        lastShape.GetComponent<BouncyScript>().baseDirection = new Vector2(0f, 1f); break;
+                                }
+                                break;
+
+                        }
+
+                        Destroy(currentPreview);
+                        currentPreview = null;
+                        spawnZone.SetActive(false);
+                        spawnState = false;
+                    }
+                }
+            }
+            if (Mouse.current.rightButton.wasPressedThisFrame && spawnState)
             {
                 Destroy(currentPreview);
-                mousePosition = Mouse.current.position.ReadValue();
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-                currentPreview = Instantiate(shapePreviews[shapeIndex], mousePosition, new Quaternion(), this.transform);
-                var color = colors[colorIndex];
-                color.a = 0.5f;
-                currentPreview.GetComponent<SpriteRenderer>().color = color;
-                previewScript = currentPreview.GetComponent<Preview>();
+                currentPreview = null;
+                spawnZone.SetActive(false);
+                spawnState = false;
             }
-        }
-
-        if (Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            colorIndex = (colorIndex + 1) % colors.Length;
-            while (!unlockedColors[colorIndex]) colorIndex = (colorIndex + 1) % colors.Length;
-            pauseMenu.ChooseColor(colorIndex);
-            if (currentPreview != null)
+            if (Keyboard.current.eKey.wasPressedThisFrame)
             {
-                var color = colors[colorIndex];
-                color.a = 0.5f;
-                currentPreview.GetComponent<SpriteRenderer>().color = color;
-                
+                shapeIndex = (shapeIndex + 1) % shapePreviews.Length;
+                if (currentPreview != null)
+                {
+                    Destroy(currentPreview);
+                    mousePosition = Mouse.current.position.ReadValue();
+                    mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                    currentPreview = Instantiate(shapePreviews[shapeIndex], mousePosition, new Quaternion(), this.transform);
+                    var color = colors[colorIndex];
+                    color.a = 0.5f;
+                    currentPreview.GetComponent<SpriteRenderer>().color = color;
+                    previewScript = currentPreview.GetComponent<Preview>();
+                }
+            }
+
+            if (Keyboard.current.rKey.wasPressedThisFrame)
+            {
+                colorIndex = (colorIndex + 1) % colors.Length;
+                while (!unlockedColors[colorIndex]) colorIndex = (colorIndex + 1) % colors.Length;
+                pauseMenu.ChooseColor(colorIndex);
+                if (currentPreview != null)
+                {
+                    var color = colors[colorIndex];
+                    color.a = 0.5f;
+                    currentPreview.GetComponent<SpriteRenderer>().color = color;
+
+                }
             }
         }
     }
@@ -187,6 +189,10 @@ public class PlayerController : MonoBehaviour
             if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
                 dir = 1;
 
+            if (dir != 0)
+            {
+                transform.localScale = new Vector3(-1 * dir, 1, 1);
+            }
             //rb.linearVelocityX = speed * dir;
             float targetSpeed = dir * speed;
             float speedDiff = targetSpeed - rb.linearVelocity.x;

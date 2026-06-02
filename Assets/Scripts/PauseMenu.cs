@@ -10,9 +10,12 @@ public class PauseMenu : MonoBehaviour
     public bool inControls;
     public GameObject[] colorHide;
     public GameObject colorSelector;
+    public GameObject player;
+    public PlayerController playerController;
 
     void Start()
     {
+        playerController = player.GetComponent<PlayerController>();
         if (pauseMenuPanel != null)
         {
             pauseMenuPanel.SetActive(false);
@@ -62,6 +65,7 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 0f;
         isPaused = true;
+        playerController.freezeControls = true;
     }
 
     public void ResumeGame()
@@ -73,6 +77,7 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 1f;
         isPaused = false;
+        playerController.freezeControls = false;
     }
 
     public void Retry()
@@ -84,6 +89,7 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 1f;
         isPaused = false;
+        playerController.freezeControls = false;
     }
 
     public void Controls()

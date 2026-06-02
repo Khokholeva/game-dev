@@ -133263,6 +133263,8 @@ MonoBehaviour:
   - {fileID: 1224981379}
   - {fileID: 1179215131}
   colorSelector: {fileID: 1149798211}
+  player: {fileID: 1022414696}
+  playerController: {fileID: 0}
 --- !u!4 &946657592
 Transform:
   m_ObjectHideFlags: 0
@@ -134715,6 +134717,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1022414696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3127566796759661177, guid: c087ba11c58259c42a1d41299d559fae, type: 3}
+  m_PrefabInstance: {fileID: 1258479370}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1031692045
 GameObject:
   m_ObjectHideFlags: 0
@@ -138929,7 +138936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6577924532945585721, guid: c087ba11c58259c42a1d41299d559fae, type: 3}
       propertyPath: start.y
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 6577924532945585721, guid: c087ba11c58259c42a1d41299d559fae, type: 3}
       propertyPath: maxCount
@@ -177546,3 +177553,6 @@ SceneRoots:
   - {fileID: 687520424}
   - {fileID: 1081323045}
   - {fileID: 1578840855}
+  - {fileID: 515300816}
+  - {fileID: 1604480567}
+  - {fileID: 1957842416}
