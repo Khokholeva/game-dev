@@ -11,12 +11,14 @@ public class PauseMenu : MonoBehaviour
     public bool isPaused;
     public bool inControls;
     public bool inIntro;
+    public bool inVictory;
     public GameObject[] colorHide;
     public GameObject[] shapeSelect;
     public GameObject colorSelector;
     public GameObject player;
     public PlayerController playerController;
     public GameObject introImage;
+    public GameObject VictoryScreen;
 
     void Start()
     {
@@ -53,11 +55,18 @@ public class PauseMenu : MonoBehaviour
     {
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (inIntro)
+            if (inVictory)
+            {
+                playerController.freezeControls = false;
+                VictoryScreen.SetActive(false);
+                inVictory = false;
+            }
+            else if (inIntro)
             {
                 inIntro = false;
                 playerController.freezeControls = false;
                 introImage.SetActive(false);
+                uiPanel.SetActive(true);
             }
             else if (inControls)
             {
@@ -82,7 +91,14 @@ public class PauseMenu : MonoBehaviour
 
     public void ChooseColor(int color)
     {
-        colorSelector.GetComponent<RectTransform>().anchoredPosition = new Vector3(-500 + color * 70, 220, 0);  
+        colorSelector.GetComponent<RectTransform>().anchoredPosition = new Vector3(-500 + color * 70, 255, 0);  
+    }
+
+    public void ShowVictory()
+    {
+        playerController.freezeControls = true;
+        VictoryScreen.SetActive(true);
+        inVictory = true;
     }
 
     public void PauseGame()

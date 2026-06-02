@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     public float spawnRadius = 15.0f;
     private float dist;
 
-    private Vector2 spawnPosition;
+    public Vector3 spawnPosition;
 
     Preview previewScript;
 

@@ -28,10 +28,11 @@ public class ExplosiveCutscene : MonoBehaviour
     {
         var script = player.GetComponent<PlayerController>();
         var anim = cutsceneSprite.GetComponent<Animator>();
-        anim.SetBool("Play", true);
+        anim.SetBool("IsActive", true);
         script.freezeControls = true;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2f);
         script.freezeControls = false;
         cutsceneSprite.SetActive(false);
+        Destroy(gameObject);
     }
 }
